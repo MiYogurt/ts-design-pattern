@@ -1,0 +1,16 @@
+{
+  "name": "ts-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && ava"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "typescript": "next"
+  }
+}

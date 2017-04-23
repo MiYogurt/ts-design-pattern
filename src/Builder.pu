@@ -1,0 +1,70 @@
+@startuml
+scale 3
+title 建造者模式
+skinparam defaultFontName "Verdana 黑体"
+skinparam backgroundColor #EEEBDC
+
+interface Item {
+    +name() : string
+    +price(): number
+    +packing() : Packing
+}
+
+interface Packing{
+    +pack() : string
+}
+
+class Wrapper
+
+class Bottle
+
+abstract class Burger
+
+abstract class ColdDrink
+
+class VegBurger
+
+class ChickenBurger
+
+class Coke
+
+class Pepsi
+
+class Meal{
+    _items : Item[]
+}
+
+class MealBuilder{
+    +prepareVegMeal() : Meal
+    +prepareNotVegMeal() : Meal
+}
+
+Packing <|.. Wrapper
+Packing <|.. Bottle
+
+Burger ...|> Item
+ColdDrink ...|> Item
+
+Burger  --*  Wrapper
+ColdDrink --* Bottle
+
+VegBurger --|> Burger
+ChickenBurger --|> Burger
+
+Coke --|> ColdDrink
+Pepsi --|> ColdDrink
+
+Meal "1" --o "many" Item
+
+MealBuilder --o Meal
+
+' 备注
+note left of Bottle
+    所有的饮料都用瓶子进行包装
+end note
+
+note right of Wrapper
+    所有的汉堡都用纸盒抱起来
+end note
+
+@enduml

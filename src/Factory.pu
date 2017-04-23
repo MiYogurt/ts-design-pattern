@@ -1,0 +1,21 @@
+@startuml
+scale 3
+title 工厂模式
+skinparam defaultFontName "Verdana 黑体"
+skinparam backgroundColor #EEEBDC
+
+class Mother{
+    + {static} giveMe(whatYouWant: string) : Jelly | null
+    + {static} chewJelly(jelly : Jelly) : jelly
+}
+
+
+class Jelly
+class ToyPlane
+
+
+Mother o.. Jelly
+Mother o.. ToyPlane
+
+
+@enduml
